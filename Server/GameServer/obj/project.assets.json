@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Project\\GameServer\\GameServer\\GameServer\\GameServer.csproj",
+      "projectUniqueName": "G:\\Project\\UnityServer\\Server\\GameServer\\GameServer.csproj",
       "projectName": "GameServer",
-      "projectPath": "G:\\Project\\GameServer\\GameServer\\GameServer\\GameServer.csproj",
+      "projectPath": "G:\\Project\\UnityServer\\Server\\GameServer\\GameServer.csproj",
       "packagesPath": "C:\\Users\\polgo\\.nuget\\packages\\",
-      "outputPath": "G:\\Project\\GameServer\\GameServer\\GameServer\\obj\\",
+      "outputPath": "G:\\Project\\UnityServer\\Server\\GameServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

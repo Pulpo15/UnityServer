@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8TFAbSCYOfB0UpxjOuMiVCzF/Uw2BVPEAMLLH9QCiXc9zKa4K2pl1FJLRZsB9DGdIVzHprxMZxazBJvr6stp4Q==",
+  "dgSpecHash": "11tCmzde3JSRf0c+g2a1YU3u8mytuIfHD6LX6n4pWeKL0Z7/PwMRMzqfFE76uF65Y1mJPPbtOeLw5BNZc6Z8vw==",
   "success": true,
-  "projectFilePath": "G:\\Project\\GameServer\\GameServer\\GameServer\\GameServer.csproj",
+  "projectFilePath": "G:\\Project\\UnityServer\\Server\\GameServer\\GameServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
