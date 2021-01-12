@@ -3,60 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
-    [Header("Rotation")]
-    public float mouseSensitivity = 100f;
 
-    private float xRotation = 0f;
-    private float yRotation = 0f;
+    public int id = 0;
+    public string username = "";
 
-    [Header("Movement")]
-    public Rigidbody RB;
+    //[Header("Rotation")]
+    //public float mouseSensitivity = 100f;
 
-    public float speed = 12f; //12 by default
+    //private float xRotation = 0f;
+    //private float yRotation = 0f;
 
-    [Header("Jump")]
-    public LayerMask groundLayers;
-    public CapsuleCollider col;
+    //[Header("Movement")]
+    //public Rigidbody RB;
 
-    public float jumpForce = 7; //7 by default
+    //public float speed = 12f; //12 by default
 
-    void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+    //[Header("Jump")]
+    //public LayerMask groundLayers;
+    //public CapsuleCollider col;
 
-    void Update() {
-        //Rotation
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+    //public float jumpForce = 7; //7 by default
 
-        xRotation -= mouseY;
-        yRotation -= mouseX;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+    //void Start() {
+    //    Cursor.lockState = CursorLockMode.Locked;
+    //    Cursor.visible = false;
+    //}
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation / mouseSensitivity, 0);
+    //void Update() {
+    //    //Rotation
+    //    float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+    //    float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        transform.parent.localRotation = Quaternion.Euler(0, yRotation, 0);
+    //    xRotation -= mouseY;
+    //    yRotation -= mouseX;
+    //    xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        //Movement
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+    //    transform.localRotation = Quaternion.Euler(xRotation, yRotation / mouseSensitivity, 0);
 
-        Vector3 move = Vector3.right * x + Vector3.forward * z;
+    //    transform.parent.localRotation = Quaternion.Euler(0, yRotation, 0);
 
-        transform.parent.Translate(move * Time.deltaTime * speed);
+    //    //Movement
+    //    float x = Input.GetAxis("Horizontal");
+    //    float z = Input.GetAxis("Vertical");
 
-        //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded()) {
-            RB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        } else if (!Input.GetKey(KeyCode.Space) && IsGrounded()) {
-            RB.velocity = new Vector3(0,RB.velocity.y,0);
-        }
+    //    Vector3 move = Vector3.right * x + Vector3.forward * z;
 
-    }
+    //    transform.parent.Translate(move * Time.deltaTime * speed);
 
-    private bool IsGrounded() {
-        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, 
-            col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
-    }
+    //    //Jump
+    //    if (Input.GetKeyDown(KeyCode.Space) && IsGrounded()) {
+    //        RB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    //    } else if (!Input.GetKey(KeyCode.Space) && IsGrounded()) {
+    //        RB.velocity = new Vector3(0,RB.velocity.y,0);
+    //    }
+    //}
+
+    //private bool IsGrounded() {
+    //    return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, 
+    //        col.bounds.min.y, col.bounds.center.z), col.radius * .9f, groundLayers);
+    //}
+
+
 }

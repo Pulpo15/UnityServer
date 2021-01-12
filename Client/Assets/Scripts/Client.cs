@@ -17,7 +17,7 @@ public class Client : MonoBehaviour {
 
     private delegate void PacketHandler(Packet _packet);
     private static Dictionary<int, PacketHandler> packetHandlers;
-
+    
     private void Awake() {
         if (instance == null){
             instance = this;
@@ -30,6 +30,11 @@ public class Client : MonoBehaviour {
     private void Start() {
         tcp = new TCP();
         udp = new UDP();
+    }
+
+    private void Update() {
+        //if (packetHandlers != null)
+        //    Debug.Log(packetHandlers.Count);
     }
 
     public void ConnectToServer() {
@@ -185,7 +190,6 @@ public class Client : MonoBehaviour {
                 int _packetLength = _packet.ReadInt();
                 _data = _packet.ReadBytes(_packetLength);
             }
-
             ThreadManager.ExecuteOnMainThread(() => {
                 using (Packet _packet = new Packet(_data)) {
                     int _packetId = _packet.ReadInt();
@@ -198,8 +202,11 @@ public class Client : MonoBehaviour {
     private void InitializeClientData() {
         packetHandlers = new Dictionary<int, PacketHandler>() {
             { (int)ServerPackets.welcome, ClientHandler.Welcome },
-            { (int)ServerPackets.udpTest, ClientHandler.UDPTest }
-        };
+            { (int)ServerPackets.udpTest, ClientHandler.UDPTest },
+            { (int)ServerPackets.spawnPlayer, ClientHandler.SpawnPlayer },
+            { (int)ServerPackets.playerPosition, ClientHandler.PlayerPosition },
+            { (int)ServerPackets.playerRotation, ClientHandler.PlayerRotation }
+    };
         Debug.Log("Initialized packets.");
     }
 }
