@@ -74,7 +74,7 @@ public class Server {
                 }
             }
         } catch (Exception _ex) {
-            Debug.Log($"Error receiving UDP data: {_ex}");
+            Debug.LogWarning($"Error receiving UDP data: {_ex}");
         }
     }
 
@@ -98,5 +98,10 @@ public class Server {
                 { (int)ClientPackets.playerMovement, ServerHandle.PlayerMovement },
             };
         Debug.Log("Initialized packets.");
+    }
+
+    public static void Stop() {
+        tcpListener.Stop();
+        udpListener.Close();
     }
 }
