@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &22135950
 Transform:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &861132584
 Transform:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ce2a0f3427e894ab5710292edb3a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 4838539981378466255, guid: 7add1e6dc4537424eb7d4d25b0ff3047,
+  playerPrefab: {fileID: 6695313298645644557, guid: f600576f82ee70e478769db9c62bd70f,
     type: 3}
   enemyPrefab: {fileID: 4838539981378466255, guid: d56d4f6deb9a56746b14b21662dd647b,
     type: 3}
@@ -580,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1884770908
 Transform:
   m_ObjectHideFlags: 0

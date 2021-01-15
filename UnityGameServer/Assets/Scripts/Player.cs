@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public string username;
     public CharacterController controller;
     public Transform shootOrigin;
+    public Animator animator;
     public float gravity = -9.81f;
     public float moveSpeed = 5f;
     public float jumpSpeed = 5f;
@@ -40,17 +41,28 @@ public class Player : MonoBehaviour {
 
         Vector2 _inputDirection = Vector2.zero;
         if (inputs[0]) {
+            if (!animator.GetBool("Walk"))
+                animator.SetBool("Walk", true);
             _inputDirection.y += 1;
         }
         if (inputs[1]) {
+            if (!animator.GetBool("Walk"))
+                animator.SetBool("Walk", true);
             _inputDirection.y -= 1;
         }
         if (inputs[2]) {
+            if (!animator.GetBool("Walk"))
+                animator.SetBool("Walk", true);
             _inputDirection.x -= 1;
         }
         if (inputs[3]) {
+            if (!animator.GetBool("Walk"))
+                animator.SetBool("Walk", true);
             _inputDirection.x += 1;
         }
+
+        if (!inputs[0] && !inputs[1] && !inputs[2] && !inputs[3])
+            animator.SetBool("Walk", false);
 
         Move(_inputDirection);
     }
